@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .button {
+                background-color: rgb(95, 95, 95); /* Green */
+                border: none;
+                color: rgb(0, 0, 0);
+                /* padding: 20px;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+                display: flex; */
+                margin-top: 50px;
+                    text-decoration: none;
+                display: inline-block;
+                font-size: 50px;
+                font-style: oblique;
+                cursor: pointer;
+                width:300px;
+                height: 300px;
+                border-radius: 50%;
+                
+            }
+            
+            .centeredbutton{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .button5 {border-radius: 50%;}
+        </style>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                {{message}} -->
+                </div>
+            {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        {% block body %}{% endblock %}
+        </div>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="centeredbutton">
+                <input type="file" name="file">
+            </div>
+            <div class="centeredbutton" >
+                <input class="button" type= "submit" name="uploadfile" action = "http://localhost:4000/uploading/">
+            </div>
+        </form>
+    </body>
+ </html>
+
+<!-- <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.button {
+    background-color: rgb(95, 95, 95); /* Green */
+    border: none;
+    color: rgb(0, 0, 0);
+    /* padding: 20px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex; */
+        text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+    font-style: oblique;
+    cursor: pointer;
+    width:300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.container6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button5 {border-radius: 50%;}
+</style>
+</head>
+<body>
+
+<div class="container6">
+    <button class="button" name="uploadfile">Upload</button>
+</div>
+
+</html> -->
